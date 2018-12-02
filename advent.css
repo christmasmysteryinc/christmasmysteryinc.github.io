@@ -1,0 +1,19 @@
+div.door {
+    position: absolute;
+    opacity: 0.1;
+//    border: 1px solid black;
+}
+
+div.door_number{
+    background: white;
+    width: 3em;
+    text-align: center;
+    font-size: 200%;
+    opacity: 1;
+}
+#door_holder{
+    position: absolute;
+    left:50px;
+    top: 50px;
+
+}
