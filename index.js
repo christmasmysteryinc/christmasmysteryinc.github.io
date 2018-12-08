@@ -16,6 +16,13 @@ $(document).ready(function(){
 	$(this).css('opacity', '1');
 	$(this).html(`<img src='${url}' style='width: ${width}px; height: ${height}px; opacity:1;'>`);
 	$(this).prop("shown", 1);
+	let video = document.getElementById("video");
+	video.pause();
+	document.getElementById("video_title").innerHTML = `Day ${day}`;
+	let source = document.getElementById("video_source");
+	source.setAttribute("src",`day_${day}/colouring.mp4`);
+	video.load();
+	video.play();
 
     }
 
