@@ -1,6 +1,7 @@
-String[] imgNames = {"colouredhalf.png"};
+String[] imgNames = {"../colouredhalfx2.png"};
 PImage img;
 int imgIndex = 0;
+boolean started = false;
 
 
 void nextImage() {
@@ -15,6 +16,7 @@ void nextImage() {
   if (imgIndex >= imgNames.length) {
     imgIndex = 0;
   }
+  started = true;
 }
 
 
@@ -55,20 +57,22 @@ void paintStroke(float strokeLength, color strokeColor, int strokeThickness) {
 
 
 void setup() {
-  size(950, 700);
-  
-  nextImage();
+  size(1160, 748);
+  frameRate(4);
 }
 
 
 void draw() {
+  if(!started){
+     return; 
+  }
   translate(width/2, height/2);
   
   int index = 0;
   
   for (int y = 0; y < img.height; y+=1) {
     for (int x = 0; x < img.width; x+=1) {
-      int odds = (int)random(20000);
+      int odds = (int)random(10000);
       
       if (odds < 1) {
         color pixelColor = img.pixels[index];
@@ -103,7 +107,11 @@ void draw() {
     }
   }
   
-  if (frameCount > 600) {
+  if (frameCount > 1000) {
     noLoop();
   }
+}
+
+void mousePressed(){
+   nextImage(); 
 }
