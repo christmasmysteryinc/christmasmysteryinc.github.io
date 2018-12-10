@@ -13,8 +13,10 @@ $(document).ready(function(){
 	let day = bits[1];
 	let img = bits[2];
 	let url = `day_${day}/coloured.png`;
-	$(this).css('opacity', '1');
-	$(this).html(`<img src='${url}' style='width: ${width}px; height: ${height}px; opacity:1;'>`);
+	if(!$(this).prop("shown")){
+	    $(this).css('opacity', '1');
+	    $(this).html(`<img src='${url}' style='width: ${width}px; height: ${height}px; opacity:1;'>`);
+	}
 	$(this).prop("shown", 1);
 	let video = document.getElementById("video");
 	video.pause();
@@ -41,6 +43,9 @@ $(document).ready(function(){
 	}
     }
     let holder = $("#door_holder");
+    holder.css({width: (width*3),
+		height: (height*8)});
+    
     let x, y, img, day, door, doors;
     let pos, background, size;
     

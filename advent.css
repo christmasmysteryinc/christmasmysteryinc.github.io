@@ -11,13 +11,4 @@ div.door_number{
     font-size: 200%;
     opacity: 1;
 }
-#door_holder{
-    position: absolute;
-    left:50px;
-    top: 50px;
 
-}
-
-#video_holder{
-    float: right;}
-}
